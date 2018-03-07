@@ -1,25 +1,12 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-	private let topicLabel: UILabel = {
-		let label = UILabel()
-		label.text = "Topic"
-		label.textAlignment = .center //textAlignment count = 1
-		label.font = label.font.withSize(36)
-		label.translatesAutoresizingMaskIntoConstraints = false //translatesAutoresizingMaskIntoConstraints count = 1
-		
-		return label
-	}()
+	private let topicLabel = UILabelFactory(text: "Topic 1")
+		.fontSize(of: 36)
+		.builder()
 	
-	private let subTopicLabel: UILabel = {
-		let label = UILabel()
-		label.text = "subTopic"
-		label.textAlignment = .center //textAlignment count = 2
-		label.font = label.font.withSize(20)
-		label.translatesAutoresizingMaskIntoConstraints = false //translatesAutoresizingMaskIntoConstraints count = 2
-		
-		return label
-	}()
+	private let subTopicLabel = UILabelFactory(text: "subTopic")
+		.builder()
 	
 	private let profileImageView: UIImageView = {
 		let imageView = UIImageView()
@@ -29,26 +16,14 @@ class FirstViewController: UIViewController {
 		return imageView
 	}()
 	
-	private let miniDescriptionLabel: UILabel = {
-		let label = UILabel()
-		label.text = "Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip "
-		label.textAlignment = .center //textAlignment count = 3
-		label.font = label.font.withSize(18)
-		label.numberOfLines = 3
-		label.translatesAutoresizingMaskIntoConstraints = false //translatesAutoresizingMaskIntoConstraints count = 3
-		
-		return label
-	}()
+	private let miniDescriptionLabel = UILabelFactory(text: "Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip")
+		.numberOf(lines: 3)
+		.textColor(with: .blue)
+		.builder()
 	
-	private let nextButton: UIButton = {
-		let button = UIButton()
-		button.setTitle("next", for: .normal)
-		button.backgroundColor = .blue
-		button.addTarget(self, action: #selector(nextButtonActionHandler(_:)), for: .touchUpInside)
-		button.translatesAutoresizingMaskIntoConstraints = false //translatesAutoresizingMaskIntoConstraints count = 4
-		
-		return button
-	}()
+	private let nextButton = UIButtonFactory(title: "Next")
+		.addTarget(self, action: #selector(nextButtonActionHandler(_:)), for: .touchUpInside)
+		.builder()
 	
 	// MARK: - View lify-cicle
 	override func viewDidLoad() {
@@ -58,7 +33,7 @@ class FirstViewController: UIViewController {
 	}
 	
 	@objc private func nextButtonActionHandler(_ sender: UIButton) {
-		
+		print("aaa")
 	}
 	
 	// MARK: - Private methods

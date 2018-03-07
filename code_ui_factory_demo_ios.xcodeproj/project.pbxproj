@@ -16,6 +16,10 @@
 		D182A8FC2050040B003FF9A2 /* code_ui_factory_demo_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182A8FB2050040B003FF9A2 /* code_ui_factory_demo_iosUITests.swift */; };
 		D182A90A205005B2003FF9A2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182A909205005B2003FF9A2 /* SecondViewController.swift */; };
 		D182A90C205005D7003FF9A2 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182A90B205005D7003FF9A2 /* ThirdViewController.swift */; };
+		D182A90F20505AD0003FF9A2 /* UILabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182A90E20505AD0003FF9A2 /* UILabelFactory.swift */; };
+		D182A91120507137003FF9A2 /* UIButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182A91020507137003FF9A2 /* UIButtonFactory.swift */; };
+		D1B233CA205082F6004F9BC1 /* UIImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B233C9205082F6004F9BC1 /* UIImageFactory.swift */; };
+		D1B233CC2050839A004F9BC1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B233CB2050839A004F9BC1 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		D182A8FD2050040B003FF9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D182A909205005B2003FF9A2 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		D182A90B205005D7003FF9A2 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		D182A90E20505AD0003FF9A2 /* UILabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelFactory.swift; sourceTree = "<group>"; };
+		D182A91020507137003FF9A2 /* UIButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonFactory.swift; sourceTree = "<group>"; };
+		D1B233C9205082F6004F9BC1 /* UIImageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageFactory.swift; sourceTree = "<group>"; };
+		D1B233CB2050839A004F9BC1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +109,14 @@
 		D182A8DA2050040B003FF9A2 /* code_ui_factory_demo_ios */ = {
 			isa = PBXGroup;
 			children = (
+				D1B233CB2050839A004F9BC1 /* UIView+Extensions.swift */,
+				D1B233CD205083D8004F9BC1 /* Factories */,
+				D182A90D20505AAA003FF9A2 /* Controllers */,
 				D182A8DB2050040B003FF9A2 /* AppDelegate.swift */,
 				D182A8DF2050040B003FF9A2 /* Main.storyboard */,
 				D182A8E22050040B003FF9A2 /* Assets.xcassets */,
 				D182A8E42050040B003FF9A2 /* LaunchScreen.storyboard */,
 				D182A8E72050040B003FF9A2 /* Info.plist */,
-				D182A8DD2050040B003FF9A2 /* FirstViewController.swift */,
-				D182A90B205005D7003FF9A2 /* ThirdViewController.swift */,
-				D182A909205005B2003FF9A2 /* SecondViewController.swift */,
 			);
 			path = code_ui_factory_demo_ios;
 			sourceTree = "<group>";
@@ -129,6 +137,26 @@
 				D182A8FD2050040B003FF9A2 /* Info.plist */,
 			);
 			path = code_ui_factory_demo_iosUITests;
+			sourceTree = "<group>";
+		};
+		D182A90D20505AAA003FF9A2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D182A8DD2050040B003FF9A2 /* FirstViewController.swift */,
+				D182A90B205005D7003FF9A2 /* ThirdViewController.swift */,
+				D182A909205005B2003FF9A2 /* SecondViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D1B233CD205083D8004F9BC1 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				D182A90E20505AD0003FF9A2 /* UILabelFactory.swift */,
+				D182A91020507137003FF9A2 /* UIButtonFactory.swift */,
+				D1B233C9205082F6004F9BC1 /* UIImageFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +296,10 @@
 				D182A90A205005B2003FF9A2 /* SecondViewController.swift in Sources */,
 				D182A90C205005D7003FF9A2 /* ThirdViewController.swift in Sources */,
 				D182A8DE2050040B003FF9A2 /* FirstViewController.swift in Sources */,
+				D1B233CA205082F6004F9BC1 /* UIImageFactory.swift in Sources */,
+				D182A90F20505AD0003FF9A2 /* UILabelFactory.swift in Sources */,
+				D182A91120507137003FF9A2 /* UIButtonFactory.swift in Sources */,
+				D1B233CC2050839A004F9BC1 /* UIView+Extensions.swift in Sources */,
 				D182A8DC2050040B003FF9A2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
