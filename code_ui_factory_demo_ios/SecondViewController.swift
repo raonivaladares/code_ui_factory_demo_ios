@@ -1,6 +1,6 @@
 import UIKit
 
-class FirstViewController: UIViewController {
+class SecondViewController: UIViewController {
 	private let topicLabel: UILabel = {
 		let label = UILabel()
 		label.text = "Topic"
@@ -96,4 +96,3 @@ class FirstViewController: UIViewController {
 			])
 	}
 }
-
