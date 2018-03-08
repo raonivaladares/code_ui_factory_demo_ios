@@ -1,54 +1,24 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-	private let topicLabel: UILabel = {
-		let label = UILabel()
-		label.text = "Topic"
-		label.textAlignment = .center //textAlignment count = 1
-		label.font = label.font.withSize(36)
-		label.translatesAutoresizingMaskIntoConstraints = false //translatesAutoresizingMaskIntoConstraints count = 1
-		
-		return label
-	}()
+	private let topicLabel = UILabelFactory(text: "Topic 2")
+		.fontSize(of: 36)
+		.builder()
 	
-	private let subTopicLabel: UILabel = {
-		let label = UILabel()
-		label.text = "subTopic"
-		label.textAlignment = .center //textAlignment count = 2
-		label.font = label.font.withSize(20)
-		label.translatesAutoresizingMaskIntoConstraints = false //translatesAutoresizingMaskIntoConstraints count = 2
-		
-		return label
-	}()
+	private let subTopicLabel = UILabelFactory(text: "subTopic")
+		.builder()
 	
-	private let profileImageView: UIImageView = {
-		let imageView = UIImageView()
-		imageView.backgroundColor = .red
-		imageView.translatesAutoresizingMaskIntoConstraints = false //translatesAutoresizingMaskIntoConstraints count = 2
-		
-		return imageView
-	}()
+	private let profileImageView = UIImageViewFactory(image: UIImage(named: "UserProfilePlaceHolder"))
+		.builder()
 	
-	private let miniDescriptionLabel: UILabel = {
-		let label = UILabel()
-		label.text = "Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip "
-		label.textAlignment = .center //textAlignment count = 3
-		label.font = label.font.withSize(18)
-		label.numberOfLines = 3
-		label.translatesAutoresizingMaskIntoConstraints = false //translatesAutoresizingMaskIntoConstraints count = 3
-		
-		return label
-	}()
+	private let miniDescriptionLabel = UILabelFactory(text: "Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip")
+		.numberOf(lines: 3)
+		.textColor(with: .blue)
+		.builder()
 	
-	private let nextButton: UIButton = {
-		let button = UIButton()
-		button.setTitle("next", for: .normal)
-		button.backgroundColor = .blue
-		button.addTarget(self, action: #selector(nextButtonActionHandler(_:)), for: .touchUpInside)
-		button.translatesAutoresizingMaskIntoConstraints = false //translatesAutoresizingMaskIntoConstraints count = 4
-		
-		return button
-	}()
+	private let nextButton = UIButtonFactory(title: "Next")
+		.addTarget(self, action: #selector(nextButtonActionHandler(_:)), for: .touchUpInside)
+		.builder()
 	
 	// MARK: - View lify-cicle
 	override func viewDidLoad() {
@@ -58,7 +28,7 @@ class SecondViewController: UIViewController {
 	}
 	
 	@objc private func nextButtonActionHandler(_ sender: UIButton) {
-		
+		navigationController?.pushViewController(ThirdViewController(), animated: true)
 	}
 	
 	// MARK: - Private methods
@@ -80,12 +50,12 @@ class SecondViewController: UIViewController {
 			subTopicLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
 			subTopicLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
 			
-			profileImageView.topAnchor.constraint(equalTo: subTopicLabel.bottomAnchor, constant: 16),
-			profileImageView.widthAnchor.constraint(equalToConstant: 80),
-			profileImageView.heightAnchor.constraint(equalToConstant: 80),
+			profileImageView.topAnchor.constraint(equalTo: subTopicLabel.bottomAnchor, constant: 32),
+			profileImageView.widthAnchor.constraint(equalToConstant: 160),
+			profileImageView.heightAnchor.constraint(equalToConstant: 160),
 			profileImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
 			
-			miniDescriptionLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 8),
+			miniDescriptionLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 32),
 			miniDescriptionLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32),
 			miniDescriptionLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32),
 			

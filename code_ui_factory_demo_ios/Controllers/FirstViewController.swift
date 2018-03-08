@@ -8,13 +8,8 @@ class FirstViewController: UIViewController {
 	private let subTopicLabel = UILabelFactory(text: "subTopic")
 		.builder()
 	
-	private let profileImageView: UIImageView = {
-		let imageView = UIImageView()
-		imageView.backgroundColor = .red
-		imageView.translatesAutoresizingMaskIntoConstraints = false //translatesAutoresizingMaskIntoConstraints count = 2
-		
-		return imageView
-	}()
+	private let profileImageView = UIImageViewFactory(image: UIImage(named: "UserProfilePlaceHolder"))
+	.builder()
 	
 	private let miniDescriptionLabel = UILabelFactory(text: "Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip")
 		.numberOf(lines: 3)
@@ -33,7 +28,7 @@ class FirstViewController: UIViewController {
 	}
 	
 	@objc private func nextButtonActionHandler(_ sender: UIButton) {
-		print("aaa")
+		navigationController?.pushViewController(SecondViewController(), animated: true)
 	}
 	
 	// MARK: - Private methods
@@ -55,12 +50,12 @@ class FirstViewController: UIViewController {
 			subTopicLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
 			subTopicLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
 			
-			profileImageView.topAnchor.constraint(equalTo: subTopicLabel.bottomAnchor, constant: 16),
-			profileImageView.widthAnchor.constraint(equalToConstant: 80),
-			profileImageView.heightAnchor.constraint(equalToConstant: 80),
+			profileImageView.topAnchor.constraint(equalTo: subTopicLabel.bottomAnchor, constant: 32),
+			profileImageView.widthAnchor.constraint(equalToConstant: 160),
+			profileImageView.heightAnchor.constraint(equalToConstant: 160),
 			profileImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
 			
-			miniDescriptionLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 8),
+			miniDescriptionLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 32),
 			miniDescriptionLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32),
 			miniDescriptionLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32),
 			

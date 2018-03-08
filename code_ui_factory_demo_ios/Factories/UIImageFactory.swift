@@ -5,7 +5,8 @@ class UIImageViewFactory {
 	
 	init(image: UIImage?) {
 		imageView = UIImageView(image: image)
-		imageView.contentMode = .scaleAspectFill
+		imageView.contentMode = .center
+		imageView.backgroundColor = .blue
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 	}
 
