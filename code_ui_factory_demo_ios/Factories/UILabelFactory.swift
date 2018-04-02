@@ -1,10 +1,11 @@
 import UIKit
 
-class UILabelFactory {
+final class UILabelFactory {
 	private let label: UILabel
 	private let defultFontSize: CGFloat = 20
 	
-	init(text: String?) {
+	// MARK: - Inits
+	init(text: String) {
 		label = UILabel()
 		label.textAlignment = .center
 		label.text = text
@@ -12,6 +13,7 @@ class UILabelFactory {
 		label.translatesAutoresizingMaskIntoConstraints = false
 	}
 	
+	// MARK: - Public methods
 	func fontSize(of size: CGFloat) -> Self {
 		label.font = label.font.withSize(size)
 		
@@ -30,7 +32,7 @@ class UILabelFactory {
 		return self
 	}
 	
-	func builder() -> UILabel {
+	func build() -> UILabel {
 		return label
 	}
 }

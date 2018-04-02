@@ -3,6 +3,7 @@ import UIKit
 class UIImageViewFactory {
 	private let imageView: UIImageView
 	
+	// MARK: - Inits
 	init(image: UIImage?) {
 		imageView = UIImageView(image: image)
 		imageView.contentMode = .center
@@ -10,7 +11,8 @@ class UIImageViewFactory {
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 	}
 
-	func builder() -> UIImageView {
+	// MARK: - Public methods
+	func build() -> UIImageView {
 		return imageView
 	}
 }

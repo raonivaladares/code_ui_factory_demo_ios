@@ -23,7 +23,9 @@ class ThirdViewController: UIViewController {
 	
 	private let profileImageView: UIImageView = {
 		let imageView = UIImageView()
-		imageView.backgroundColor = .red
+		imageView.image = UIImage(named: "UserProfilePlaceHolder")
+		imageView.contentMode = .center
+		imageView.backgroundColor = .blue
 		imageView.translatesAutoresizingMaskIntoConstraints = false //translatesAutoresizingMaskIntoConstraints count = 2
 		
 		return imageView
@@ -57,8 +59,9 @@ class ThirdViewController: UIViewController {
 		buildUI()
 	}
 	
+	// MARK: - Action handlers
 	@objc private func nextButtonActionHandler(_ sender: UIButton) {
-		
+			print("action")
 	}
 	
 	// MARK: - Private methods
@@ -80,12 +83,12 @@ class ThirdViewController: UIViewController {
 			subTopicLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
 			subTopicLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
 			
-			profileImageView.topAnchor.constraint(equalTo: subTopicLabel.bottomAnchor, constant: 16),
-			profileImageView.widthAnchor.constraint(equalToConstant: 80),
-			profileImageView.heightAnchor.constraint(equalToConstant: 80),
+			profileImageView.topAnchor.constraint(equalTo: subTopicLabel.bottomAnchor, constant: 32),
+			profileImageView.widthAnchor.constraint(equalToConstant: 160),
+			profileImageView.heightAnchor.constraint(equalToConstant: 160),
 			profileImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
 			
-			miniDescriptionLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 8),
+			miniDescriptionLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 32),
 			miniDescriptionLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32),
 			miniDescriptionLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32),
 			

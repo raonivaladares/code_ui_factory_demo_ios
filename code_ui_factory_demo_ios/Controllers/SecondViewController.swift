@@ -3,22 +3,22 @@ import UIKit
 class SecondViewController: UIViewController {
 	private let topicLabel = UILabelFactory(text: "Topic 2")
 		.fontSize(of: 36)
-		.builder()
+		.build()
 	
 	private let subTopicLabel = UILabelFactory(text: "subTopic")
-		.builder()
+		.build()
 	
 	private let profileImageView = UIImageViewFactory(image: UIImage(named: "UserProfilePlaceHolder"))
-		.builder()
+		.build()
 	
 	private let miniDescriptionLabel = UILabelFactory(text: "Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip Lore lore lore ip ip ip")
 		.numberOf(lines: 3)
 		.textColor(with: .blue)
-		.builder()
+		.build()
 	
-	private let nextButton = UIButtonFactory(title: "Next")
+	private let nextButton = UIButtonFactory(title: "Next", style: .especial)
 		.addTarget(self, action: #selector(nextButtonActionHandler(_:)), for: .touchUpInside)
-		.builder()
+		.build()
 	
 	// MARK: - View lify-cicle
 	override func viewDidLoad() {
@@ -27,6 +27,7 @@ class SecondViewController: UIViewController {
 		buildUI()
 	}
 	
+	// MARK: - Action handlers
 	@objc private func nextButtonActionHandler(_ sender: UIButton) {
 		navigationController?.pushViewController(ThirdViewController(), animated: true)
 	}
