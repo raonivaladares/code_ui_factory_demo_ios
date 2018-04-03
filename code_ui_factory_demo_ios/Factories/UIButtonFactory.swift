@@ -1,6 +1,6 @@
 import UIKit
 
-class UIButtonFactory {
+final class UIButtonFactory {
 	private let button: UIButton
 	
 	enum Style {

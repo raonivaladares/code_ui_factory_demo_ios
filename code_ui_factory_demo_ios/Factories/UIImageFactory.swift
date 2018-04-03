@@ -1,6 +1,6 @@
 import UIKit
 
-class UIImageViewFactory {
+final class UIImageViewFactory {
 	private let imageView: UIImageView
 	
 	// MARK: - Inits

@@ -36,4 +36,3 @@ final class UILabelFactory {
 		return label
 	}
 }
-
